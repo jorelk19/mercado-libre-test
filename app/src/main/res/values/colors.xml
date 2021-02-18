@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFEB3B</color>
+    <color name="colorPrimaryDark">#FBC02D</color>
+    <color name="colorAccent">#9E9E9E</color>
+    <color name="colorPrimaryLight">#FFF9C4</color>
+
+    <color name='statusRedLabel'>#FF5722</color>
+    <color name='statusYellowLabel'>#E64A19</color>
+    <color name='backgroundGray'>#fff3f5f6</color>
+
+    <color name="start_gradient_color">#48F0F1F6</color>
+    <color name="end_gradient_color">#F0F1F6</color>
+    <color name="greenColor">#4CAF50</color>
+</resources>

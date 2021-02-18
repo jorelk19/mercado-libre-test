@@ -1,0 +1,33 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    //Koin
+    implementation 'org.koin:koin-core:2.0.1'
+    implementation "org.koin:koin-android:2.0.1"
+    implementation 'org.koin:koin-androidx-viewmodel:2.0.1'
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.6.4"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.6.4"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.12.10"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
+
+    implementation 'org.json:json:20201115'
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    //Local Library
+    implementation(project(":Domain"))
+    implementation(project(":Repository"))
+    implementation(project(":Models"))
+}

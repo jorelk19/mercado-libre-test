@@ -1,0 +1,7 @@
+include ':DI'
+include ':Domain'
+include ':Models'
+include ':Utils'
+include ':Repository'
+include ':app'
+rootProject.name = "MercadoLibreTest"

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="productDetailModel"
+            type="com.mercadolibre.edson.ui.viewModels.ProductDetailViewModel" />
+
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_screen">
+
+        <com.mercadolibre.edson.utils.widgets.HeaderControl
+            android:id="@+id/headerControl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:headerBackVisibility="true"
+            app:headerWindowTitle="@string/product_detail_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen40"
+            android:layout_margin="@dimen/dimen20"
+            android:textSize="@dimen/textSize15"
+            android:textStyle="bold"
+            android:text="@{productDetailModel.productDetailModel.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerControl" />
+
+        <ImageView
+            android:id="@+id/ivProductImage"
+            android:layout_width="@dimen/dimen200"
+            android:layout_height="@dimen/dimen200"
+            android:layout_margin="@dimen/dimen20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductName" />
+
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen20"
+            android:text="@{productDetailModel.productDetailModel.price}"
+            android:textSize="@dimen/textSize30"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivProductImage" />
+
+        <LinearLayout
+            android:id="@+id/installmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="@{productDetailModel.productDetailModel.showInstallments ? View.VISIBLE : View.GONE }"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductPrice">
+
+            <ImageView
+                android:id="@+id/ivCardIcon"
+                android:layout_width="@dimen/dimen30"
+                android:layout_height="@dimen/dimen25"
+                android:layout_margin="@dimen/dimen20"
+                android:background="@drawable/ic_card" />
+
+            <TextView
+                android:id="@+id/tvInstallments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen20"
+                android:textColor="@color/greenColor"
+                android:text="@{productDetailModel.productDetailModel.installmentDescription}"
+                android:textSize="@dimen/textSize15" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvProducState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen20"
+            android:text="@{productDetailModel.productDetailModel.productState}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/installmentContainer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

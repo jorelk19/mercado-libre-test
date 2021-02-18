@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="storeViewModel"
+            type="com.mercadolibre.edson.ui.viewModels.SiteViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_screen">
+
+        <com.mercadolibre.edson.utils.widgets.HeaderControl
+            android:id="@+id/headerControl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:headerWindowTitle="@string/select_site"
+            app:headerBackVisibility="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSite"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen0"
+            android:layout_margin="@dimen/dimen10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerControl" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

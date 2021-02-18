@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="searchViewModel"
+            type="com.mercadolibre.edson.ui.viewModels.SearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_screen">
+
+        <com.mercadolibre.edson.utils.widgets.HeaderControl
+            android:id="@+id/headerControl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:headerWindowTitle="@string/search_product_title"
+            app:headerBackVisibility="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etSearchProduct"
+            android:layout_width="@dimen/dimen280"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen20"
+            android:layout_marginTop="@dimen/dimen20"
+            android:layout_marginEnd="@dimen/dimen10"
+            android:hint="@string/search_product"
+            android:drawableStart="@drawable/ic_search"
+            android:text="@={searchViewModel.searchModel.textSearched}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerControl" />
+
+        <ImageView
+            android:id="@+id/ivSearchProduct"
+            android:padding="@dimen/dimen5"
+            android:layout_width="@dimen/dimen50"
+            android:layout_height="@dimen/dimen50"
+            android:layout_marginStart="@dimen/dimen10"
+            android:layout_marginTop="@dimen/dimen20"
+            android:layout_marginEnd="@dimen/dimen20"
+            android:enabled="@{searchViewModel.searchModel.searchEnable}"
+            android:src="@drawable/arrow_forward"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerControl"  />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvItemSearched"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen0"
+            android:layout_margin="@dimen/dimen10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etSearchProduct"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
