@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/DI" />
             <option value="$PROJECT_DIR$/Domain" />
+            <option value="$PROJECT_DIR$/Domain/Test" />
             <option value="$PROJECT_DIR$/Models" />
             <option value="$PROJECT_DIR$/Repository" />
             <option value="$PROJECT_DIR$/Utils" />

@@ -1,3 +1,4 @@
+include ':Domain:Test'
 include ':DI'
 include ':Domain'
 include ':Models'
