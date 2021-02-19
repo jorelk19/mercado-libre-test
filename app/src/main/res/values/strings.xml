@@ -9,4 +9,5 @@
     <string name="installment">cuotas de</string>
     <string name="product_state_title">Producto</string>
     <string name="product_detail_title">Detalle del producto</string>
+    <string name="location_title">Ubicación del producto</string>
 </resources>

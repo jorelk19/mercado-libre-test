@@ -23,4 +23,7 @@ class ProductDetailModel : BaseObservable() {
 
     @Bindable
     var showInstallments: Boolean = false
+
+    @Bindable
+    var locationDescription : String = ""
 }

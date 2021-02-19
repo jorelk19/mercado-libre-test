@@ -17,11 +17,11 @@ data class Product(
     @SerializedName("currency_id")
     val currencyId : String,
     val thumbnail : String,
-    val address : Address,
+    val address : Address? = null,
     @SerializedName("available_quantity")
     val availableQuantity : Int,
     @SerializedName("sold_quantity")
     val soldQuantity : Int,
     val condition : String,
-    val installments: Installments? = null
+    val installments: Installments? = null,
 )

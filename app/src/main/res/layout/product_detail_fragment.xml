@@ -8,7 +8,7 @@
             name="productDetailModel"
             type="com.mercadolibre.edson.ui.viewModels.ProductDetailViewModel" />
 
-        <import type="android.view.View"/>
+        <import type="android.view.View" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,73 +26,115 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvProductName"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen40"
-            android:layout_margin="@dimen/dimen20"
-            android:textSize="@dimen/textSize15"
-            android:textStyle="bold"
-            android:text="@{productDetailModel.productDetailModel.name}"
+            android:layout_height="@dimen/dimen0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/headerControl" />
+            app:layout_constraintTop_toBottomOf="@+id/headerControl"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-        <ImageView
-            android:id="@+id/ivProductImage"
-            android:layout_width="@dimen/dimen200"
-            android:layout_height="@dimen/dimen200"
-            android:layout_margin="@dimen/dimen20"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvProductName" />
-
-        <TextView
-            android:id="@+id/tvProductPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimen20"
-            android:text="@{productDetailModel.productDetailModel.price}"
-            android:textSize="@dimen/textSize30"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivProductImage" />
-
-        <LinearLayout
-            android:id="@+id/installmentContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:visibility="@{productDetailModel.productDetailModel.showInstallments ? View.VISIBLE : View.GONE }"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvProductPrice">
-
-            <ImageView
-                android:id="@+id/ivCardIcon"
-                android:layout_width="@dimen/dimen30"
-                android:layout_height="@dimen/dimen25"
-                android:layout_margin="@dimen/dimen20"
-                android:background="@drawable/ic_card" />
-
-            <TextView
-                android:id="@+id/tvInstallments"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dimen20"
-                android:textColor="@color/greenColor"
-                android:text="@{productDetailModel.productDetailModel.installmentDescription}"
-                android:textSize="@dimen/textSize15" />
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tvProductName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen40"
+                    android:layout_margin="@dimen/dimen20"
+                    android:text="@{productDetailModel.productDetailModel.name}"
+                    android:textSize="@dimen/textSize15"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/headerControl" />
 
-        <TextView
-            android:id="@+id/tvProducState"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimen20"
-            android:text="@{productDetailModel.productDetailModel.productState}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/installmentContainer" />
+                <ImageView
+                    android:id="@+id/ivProductImage"
+                    android:layout_width="@dimen/dimen200"
+                    android:layout_height="@dimen/dimen200"
+                    android:layout_margin="@dimen/dimen20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProductName" />
+
+                <TextView
+                    android:id="@+id/tvProductPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen20"
+                    android:text="@{productDetailModel.productDetailModel.price}"
+                    android:textSize="@dimen/textSize30"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivProductImage" />
+
+                <LinearLayout
+                    android:id="@+id/installmentContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="@{productDetailModel.productDetailModel.showInstallments ? View.VISIBLE : View.GONE }"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProductPrice">
+
+                    <ImageView
+                        android:id="@+id/ivCardIcon"
+                        android:layout_width="@dimen/dimen30"
+                        android:layout_height="@dimen/dimen25"
+                        android:layout_margin="@dimen/dimen20"
+                        android:background="@drawable/ic_card" />
+
+                    <TextView
+                        android:id="@+id/tvInstallments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen20"
+                        android:text="@{productDetailModel.productDetailModel.installmentDescription}"
+                        android:textColor="@color/greenColor"
+                        android:textSize="@dimen/textSize15" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvProducState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen20"
+                    android:text="@{productDetailModel.productDetailModel.productState}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/installmentContainer" />
+
+                <TextView
+                    android:id="@+id/tvLocationTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen20"
+                    android:layout_marginStart="@dimen/textSize20"
+                    android:layout_marginBottom="@dimen/dimen10"
+                    android:text="@string/location_title"
+                    android:textSize="@dimen/textSize20"
+                    android:textStyle="bold" />
+
+                <View
+                    android:background="@color/colorPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen2"
+                    android:layout_margin="@dimen/dimen5" />
+
+                <TextView
+                    android:id="@+id/tvLocationDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen20"
+                    android:text="@{productDetailModel.productDetailModel.locationDescription}"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/textSize15" />
+
+            </LinearLayout>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

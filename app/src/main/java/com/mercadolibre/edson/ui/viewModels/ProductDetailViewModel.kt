@@ -39,5 +39,8 @@ class ProductDetailViewModel : BaseViewModel() {
         } ?: run {
             productDetailModel.showInstallments = false
         }
+        product.address?.let {
+            productDetailModel.locationDescription = "${it.stateName} - ${it.cityName}"
+        }
     }
 }
